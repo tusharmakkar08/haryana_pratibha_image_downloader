@@ -21,18 +21,25 @@
 #  MA 02110-1301, USA.
 #  
 #  
-import urllib                                       
-import os
-
-url = "http://haryana.gov.in/pratibha-samman/images/DSC_0391.jpg"
-uopen = urllib.urlopen(url)
-stream = uopen.read()
-file = open('filename','w')
-file.write(stream)
-file.close()
+import urllib,os,time                                 
 
 def main():
-	
+	url = "http://haryana.gov.in/pratibha-samman/images/DSC_0"
+	for i in xrange(391,393):
+		suffix=str(i)+".jpg"
+		url+=suffix
+		uopen = urllib.urlopen(url)
+		stream = uopen.read()
+		di=os.getcwd()+"/../haryana/"
+		if not os.path.exists(di):
+			os.makedirs(di)
+		if os.path.exists(di+str(i-390)+".jpg"):
+			continue
+		file = open(di+str(i-390)+".jpg",'w')
+		file.write(stream)
+		file.close()
+		url=url[:-7]
+		print "Downloaded Image Number: "+str(i-390)
 	return 0
 
 if __name__ == '__main__':
