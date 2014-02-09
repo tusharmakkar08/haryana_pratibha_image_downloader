@@ -21,11 +21,11 @@
 #  MA 02110-1301, USA.
 #  
 #  
-import urllib,os,time                                 
+import urllib,os,time                              
 
 def main():
 	url = "http://haryana.gov.in/pratibha-samman/images/DSC_0"
-	for i in xrange(391,393):
+	for i in xrange(391,570):
 		suffix=str(i)+".jpg"
 		url+=suffix
 		uopen = urllib.urlopen(url)
@@ -38,6 +38,7 @@ def main():
 		file = open(di+str(i-390)+".jpg",'w')
 		file.write(stream)
 		file.close()
+		time.sleep(1)
 		url=url[:-7]
 		print "Downloaded Image Number: "+str(i-390)
 	return 0
