@@ -12,3 +12,10 @@ Libraries Used :
 
 1) urllib
 2) os
+
+Features :
+---------
+
+Make a seperate folder into the parent of the code directory and  saves
+the file as the `image_number.jpg` format.Well commented to increase 
+readibility of code .
