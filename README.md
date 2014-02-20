@@ -10,8 +10,8 @@ Wanted to search a girl's image who was present during the event :P
 Libraries Used :
 ----------------
 
-1) urllib
-2) os
+* urllib
+* os
 
 Features :
 ---------
